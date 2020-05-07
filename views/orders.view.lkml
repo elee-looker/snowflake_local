@@ -38,6 +38,11 @@ view: orders {
     sql: ${TABLE}."USER_ID" ;;
   }
 
+  dimension: somebool {
+    type: yesno
+    sql: ${user_id} > 20;;
+  }
+
   measure: count {
     type: count
     drill_fields: [id, users.id, users.name, order_items.count]
